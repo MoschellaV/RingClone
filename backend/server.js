@@ -12,8 +12,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/post", (req, res) => {
-    let { status } = req.body;
-    console.log(status);
+    res.sendStatus(200);
+    let { status, time } = req.body;
+    console.log(`status: ${status}`);
+    console.log(`time: ${time}`);
 });
 
 // server listening
