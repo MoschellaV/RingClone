@@ -29,7 +29,6 @@ while True:
             draw_rect(frame, coordinate_list)
          
         counter +=1
-        print(counter)
 
         # display detected face
         cv.imshow("Live Face Detection", frame)
