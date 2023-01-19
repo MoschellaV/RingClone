@@ -13,9 +13,16 @@ def notify_server():
     payload= { "status": "FACE DETECTED", "time": fetch_time()}
     headers = {"Content-Type": "application/json"}
     
-    r = requests.post(url, json=payload, headers=headers)
+    try:
+        print("Face detected. Telling the server.")
+        
+        r = requests.post(url, json=payload, headers=headers)
+        
+        print("Server sent status code: {}".format(r.content))
     
-    print("Face detected. OMG I just have to tell the server!")
+    except:
+        print("ERROR")
+        
     
 def fetch_time():
     '''
@@ -26,4 +33,3 @@ def fetch_time():
     current_time = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
      
     return current_time
-
