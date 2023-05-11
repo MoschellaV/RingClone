@@ -1,1 +1,17 @@
-/backend/node_modules
+node_modules
+.DS_Store
+.env
+
+# client
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+# firebase config file
+firebaseConfig.js 
