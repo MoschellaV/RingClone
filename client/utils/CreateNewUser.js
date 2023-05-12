@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 
-export const CreateNewUserAccount = async (email, password, confirmedPassword) => {
+export const CreateNewUser = async (email, password, confirmedPassword) => {
     // check if the passwords match
     if (password !== confirmedPassword) {
         console.log("dont match");
@@ -14,8 +14,6 @@ export const CreateNewUserAccount = async (email, password, confirmedPassword) =
         await createUserWithEmailAndPassword(auth, email, password);
         return "Success, account created!";
     } catch (error) {
-        console.error(error);
-
         if (error.code === "auth/email-already-in-use") {
             return "That email address is already in use!";
         }

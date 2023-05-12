@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Input, Stack, Pressable, Icon, Text, Button } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
-import { CreateNewUserAccount } from "../../utils/CreateUser";
+import { CreateNewUser } from "../../utils/CreateNewUser";
 
 const SignUp = ({ setShowLogInScreen }) => {
     // hidden password states
@@ -19,11 +19,11 @@ const SignUp = ({ setShowLogInScreen }) => {
     // response of creating new user
     const [submissionResponse, setSubmissionResponse] = useState("");
 
-    const userInfoSubmit = async () => {
+    const userInfoSubmitSignUp = async () => {
         setLoading(true);
 
         // create a new user
-        const response = await CreateNewUserAccount(emailValue, passwordValue, confirmedPasswordValue);
+        const response = await CreateNewUser(emailValue, passwordValue, confirmedPasswordValue);
 
         if (response) setLoading(false); // stop loading after recieving a resposne
 
@@ -94,7 +94,7 @@ const SignUp = ({ setShowLogInScreen }) => {
                 isLoading={loading}
                 isLoadingText="Creating your account"
                 variant="outline"
-                onPress={() => userInfoSubmit()}
+                onPress={() => userInfoSubmitSignUp()}
             >
                 <Text fontSize="md">Sign Up</Text>
             </Button>
