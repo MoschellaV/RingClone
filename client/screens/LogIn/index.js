@@ -60,13 +60,7 @@ const LogIn = ({ setShowLogInScreen }) => {
                 onChangeText={(text) => setPasswordValue(text)}
             />
 
-            <Button
-                w="100%"
-                isLoading={loading}
-                isLoadingText="Creating your account"
-                variant="outline"
-                onPress={() => userInfoSumbitLogIn()}
-            >
+            <Button w="100%" isLoading={loading} isLoadingText="One moment" onPress={() => userInfoSumbitLogIn()}>
                 <Text fontSize="md">Log In</Text>
             </Button>
 
