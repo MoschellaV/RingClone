@@ -7,17 +7,17 @@ import { SignOutUser } from "../../utils/SignOutUser";
 
 const Profile = () => {
     const { user, setUser } = useContext(UserContext);
-    console.log(user);
 
-    const formatDateCreated = (timestamp) => {
-        const date = moment(timestamp);
-        return date.format("MMMM D, YYYY");
+    const formatDateCreated = (dateString) => {
+        const date = moment(dateString);
+        const formattedDate = date.format("MMMM D, YYYY z");
+        return formattedDate;
     };
 
     return (
         <Stack space={4} w="70%" maxW="400px" mx="auto" flex={1} alignItems="center" mt={30}>
             <Text>{user.email}</Text>
-            <Text>Account Created on {formatDateCreated(user.createdAt)}</Text>
+            <Text>Account Created on {formatDateCreated(user.metadata.creationTime)}</Text>
             <Button w="100%" onPress={SignOutUser}>
                 <Text fontSize="md">Log Out</Text>
             </Button>

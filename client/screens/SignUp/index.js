@@ -94,7 +94,7 @@ const SignUp = ({ setShowLogInScreen }) => {
                 isLoading={loading}
                 isLoadingText="Creating your account"
                 variant="outline"
-                onPress={() => userInfoSubmitSignUp()}
+                onPress={userInfoSubmitSignUp}
             >
                 <Text fontSize="md">Sign Up</Text>
             </Button>
