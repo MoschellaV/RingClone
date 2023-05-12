@@ -12,10 +12,10 @@ import AuthUser from "./utils/AuthUser";
 import { initializeApp, getApps } from "firebase/app";
 import firebaseConfig from "./Firebase/firebaseConfig";
 
-// initialize firebase
-if (!getApps().length) {
-    initializeApp(firebaseConfig);
-}
+// // initialize firebase
+// if (!getApps().length) {
+//     initializeApp(firebaseConfig);
+// }
 
 export default function App() {
     return (

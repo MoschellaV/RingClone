@@ -1,11 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input, Stack, Pressable, Icon, Text, Button } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import { CreateNewUserAccount } from "../../utils/CreateUser";
 
 const SignUp = ({ setShowLogInScreen }) => {
-    const [value, setValue] = useState("");
+    // hidden password states
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    // value's for input boxes
+    const [emailValue, setEmailValue] = useState(""); // email
+    const [passwordValue, setPasswordValue] = useState(""); // password
+    const [confirmedPasswordValue, setConfirmedPasswordValue] = useState(""); // confirmed password
+
+    // loading
+    const [loading, setLoading] = useState(false);
+
+    // response of creating new user
+    const [submissionResponse, setSubmissionResponse] = useState("");
+
+    const userInfoSubmit = async () => {
+        setLoading(true);
+
+        // create a new user
+        const response = await CreateNewUserAccount(emailValue, passwordValue, confirmedPasswordValue);
+
+        if (response) setLoading(false); // stop loading after recieving a resposne
+
+        // store response given by function
+        setSubmissionResponse(response);
+    };
+
+    useEffect(() => {
+        console.log(submissionResponse);
+    }, [submissionResponse]);
 
     return (
         <Stack space={4} w="70%" maxW="400px" mx="auto" flex={1} alignItems="center" justifyContent="center">
@@ -14,8 +42,15 @@ const SignUp = ({ setShowLogInScreen }) => {
                 Create an account here
             </Text>
 
-            <Input size="xl" placeholder="Email Address" />
+            {/* email field */}
+            <Input
+                size="xl"
+                placeholder="Email Address"
+                value={emailValue}
+                onChangeText={(text) => setEmailValue(text)}
+            />
 
+            {/* password field */}
             <Input
                 size="xl"
                 type={showPassword ? "text" : "password"}
@@ -30,8 +65,11 @@ const SignUp = ({ setShowLogInScreen }) => {
                     </Pressable>
                 }
                 placeholder="Password"
+                value={passwordValue}
+                onChangeText={(text) => setPasswordValue(text)}
             />
 
+            {/* confirm password field */}
             <Input
                 size="xl"
                 type={showConfirmPassword ? "text" : "password"}
@@ -46,11 +84,23 @@ const SignUp = ({ setShowLogInScreen }) => {
                     </Pressable>
                 }
                 placeholder="Confirm Password"
+                value={confirmedPasswordValue}
+                onChangeText={(text) => setConfirmedPasswordValue(text)}
             />
 
-            <Button w="100%" isLoading={false} isLoadingText="Creating your account" variant="outline">
+            {/* submit button */}
+            <Button
+                w="100%"
+                isLoading={loading}
+                isLoadingText="Creating your account"
+                variant="outline"
+                onPress={() => userInfoSubmit()}
+            >
                 <Text fontSize="md">Sign Up</Text>
             </Button>
+
+            {/* submission response appears after user creates account */}
+            {submissionResponse && <Text fontSize="sm">{submissionResponse}</Text>}
 
             <Text fontSize="sm" style={{ marginTop: 30 }}>
                 Back to{" "}
