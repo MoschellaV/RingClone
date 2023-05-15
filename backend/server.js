@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const app = express();
 const userRoutes = require("./routes/user");
+const deviceRoutes = require("./routes/device");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -11,6 +12,9 @@ app.use(cors());
 
 // routes that interact with front end
 app.use(userRoutes);
+
+// routes that interact the the device/camera appliance
+app.use(deviceRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello!");

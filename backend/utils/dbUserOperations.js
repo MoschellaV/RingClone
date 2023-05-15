@@ -1,15 +1,18 @@
-const { auth, db } = require("../Firebase/firebase.js");
+const { admin, auth, db } = require("../Firebase/firebase.js");
+const { addDeviceLog } = require("./dbDeviceOperations.js");
 
 const createUserDocumnet = async (userData) => {
-    // creates a document for a user
-    // this is done on account creation
+    /* 
+    creates a document for a user
+    this is done on account creation
+    */
 
     // create data object
     const data = {
         uid: userData.uid,
         email: userData.email,
         creationTime: userData.metadata.creationTime,
-        ringDevices: [],
+        userDevices: [],
     };
 
     // get referance to the doc
@@ -23,8 +26,52 @@ const createUserDocumnet = async (userData) => {
     }
 };
 
-const addDeviceToUser = () => {};
+const addDeviceToUser = async (userId, deviceName, deviceId) => {
+    /* 
+    adds a device to the user, if to has not already been added
+    */
+
+    // get referance to the doc
+    const docRef = db.collection("users").doc(userId);
+
+    try {
+        // get the doc
+        const doc = await docRef.get();
+
+        // checking if it exists
+        if (!doc.exists) {
+            console.log("No such document to add device to user");
+        } else {
+            // get the data from the doc to check if the deviceId has already been used
+            // users cannot add the same device twice
+            const userData = doc.data();
+            const userDevices = userData.userDevices || [];
+            const deviceExists = userDevices.some((device) => device.deviceId === deviceId);
+
+            // if the device does not exist we can proceed to add it
+            if (!deviceExists) {
+                const newDevice = {
+                    deviceName: deviceName,
+                    deviceId: deviceId,
+                };
+
+                // add device to userDevices array
+                await docRef.update({
+                    userDevices: admin.firestore.FieldValue.arrayUnion(newDevice),
+                });
+
+                return "Device added successfully.";
+            } else {
+                return "Device has already been added.";
+            }
+        }
+    } catch (error) {
+        console.error("Error adding device to user: ", error);
+        return "Could not add this device.";
+    }
+};
 
 module.exports = {
     createUserDocumnet,
+    addDeviceToUser,
 };

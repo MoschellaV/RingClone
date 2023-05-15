@@ -42,12 +42,9 @@ router.post("/api/user/delete-user-account", async (req, res) => {
 });
 
 router.post("/api/user/add-device", async (req, res) => {
+    const userId = req.body.userId;
     const deviceName = req.body.name;
-    const deviceId = req.body.id;
-
-    console.log(deviceName);
-
-    console.log(deviceId);
+    const deviceId = req.body.deviceId;
 
     // verify the device exists by checking db
     try {
@@ -56,6 +53,9 @@ router.post("/api/user/add-device", async (req, res) => {
         // send error message back to client
         if (deviceExistStatus !== "Device exists.") {
             res.json({ message: deviceExistStatus });
+        } else {
+            const addDeviceStatus = await dbUser.addDeviceToUser(userId, deviceName, deviceId);
+            res.json({ message: addDeviceStatus });
         }
     } catch (error) {
         console.error(error);

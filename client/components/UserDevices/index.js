@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../../context/UserContext";
 
 import { Button, Stack, Text, Modal, FormControl, Input } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { addNewDevice } from "../../api/serverRequests";
 
 const UserDevices = () => {
+    const { user, setUser } = useContext(UserContext);
+
     const [showModal, setShowModal] = useState(false);
     const [deviceName, setDeviceName] = useState("");
     const [deviceId, setDeviceId] = useState("");
@@ -20,8 +23,9 @@ const UserDevices = () => {
 
     const addNewDevicetoUser = async () => {
         const id = {
+            userId: user.uid,
             name: deviceName,
-            id: deviceId,
+            deviceId: deviceId,
         };
 
         setLoading(true);
