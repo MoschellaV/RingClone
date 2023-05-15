@@ -63,6 +63,29 @@ router.post("/api/user/add-device", async (req, res) => {
     }
 });
 
+router.post("/api/user/get-user-devices", async (req, res) => {
+    const userId = req.body.userId;
+
+    try {
+        // fetching user devices
+        const response = await dbUser.fetchUserDevices(userId);
+
+        // error handling
+        if (response === "No document found.") {
+            res.json({ message: "No document found." });
+        }
+        if (response === "Unable to fetch document.") {
+            console.error("Unable to fetch document.");
+            res.json({ message: "Unable to fetch document." });
+        } else {
+            res.json({ message: response });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error occurred while retriving user document." });
+    }
+});
+
 // router.get("/api/user/get-user-account-by-email", async (req, res) => {
 //     try {
 //         // fetch the user's data

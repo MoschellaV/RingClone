@@ -71,7 +71,28 @@ const addDeviceToUser = async (userId, deviceName, deviceId) => {
     }
 };
 
+const fetchUserDevices = async (userId) => {
+    /*
+    Uses the user if to fetch the array that contains all user devices
+    */
+
+    const docRef = db.collection("users").doc(userId);
+
+    try {
+        const document = await docRef.get();
+        if (document.exists) {
+            return document.get("userDevices");
+        } else {
+            return "No document found.";
+        }
+    } catch (error) {
+        console.error("Error fetching document: ", error);
+        return "Unable to fetch document.";
+    }
+};
+
 module.exports = {
     createUserDocumnet,
     addDeviceToUser,
+    fetchUserDevices,
 };

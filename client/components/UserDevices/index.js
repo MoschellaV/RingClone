@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import { Button, Stack, Text, Modal, FormControl, Input } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { addNewDevice } from "../../api/serverRequests";
+import RenderDevices from "./RenderDevices";
 
 const UserDevices = () => {
     const { user, setUser } = useContext(UserContext);
@@ -53,6 +54,10 @@ const UserDevices = () => {
             <Text fontSize="lg" style={{ fontWeight: "bold" }}>
                 Your Devices
             </Text>
+
+            {/* render the users devices */}
+            <RenderDevices />
+
             <Button
                 size="sm"
                 variant="outline"

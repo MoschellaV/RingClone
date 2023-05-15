@@ -7,8 +7,6 @@ const dbDevice = require("../utils/dbDeviceOperations");
 router.post(`/api/device/add-log/:deviceId`, async (req, res) => {
     const deviceId = req.params.deviceId;
     const logInfo = req.body;
-    console.log(deviceId);
-    console.log(logInfo);
 
     try {
         const response = await dbDevice.addDeviceLog(deviceId, logInfo);
