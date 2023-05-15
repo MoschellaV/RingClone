@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Input, Stack, Pressable, Icon, Text, Button } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import { LogInUser } from "../../utils/LogInUser";
 import { createNewUser } from "../../api/serverRequests";
 
 const SignUp = ({ setShowLogInScreen }) => {
@@ -25,6 +26,8 @@ const SignUp = ({ setShowLogInScreen }) => {
         // check if the passwords match
         if (passwordValue !== confirmedPasswordValue) {
             setSubmissionResponse("Passwords do not match!");
+            setLoading(false);
+            return;
         }
 
         // create user data object to pass to backend
@@ -47,6 +50,13 @@ const SignUp = ({ setShowLogInScreen }) => {
                 setLoading(false);
             });
     };
+
+    useEffect(() => {
+        // log in user if they have successfully made an account
+        if (submissionResponse === "Success, account created!") {
+            LogInUser(emailValue, passwordValue);
+        }
+    }, [submissionResponse]);
 
     return (
         <Stack space={4} w="70%" maxW="400px" mx="auto" flex={1} alignItems="center" justifyContent="center">

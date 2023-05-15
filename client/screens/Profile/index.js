@@ -59,8 +59,8 @@ const Profile = () => {
                     <AlertDialog.CloseButton />
                     <AlertDialog.Header>Delete Account</AlertDialog.Header>
                     <AlertDialog.Body>
-                        This will remove all data relating to Alex. This action cannot be reversed. Deleted data can not
-                        be recovered.
+                        This will remove all data related to this account. This action cannot be reversed. Deleted data
+                        can not be recovered.
                     </AlertDialog.Body>
                     <AlertDialog.Footer>
                         <Button.Group space={2}>
