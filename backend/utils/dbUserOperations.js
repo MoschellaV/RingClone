@@ -23,6 +23,8 @@ const createUserDocumnet = async (userData) => {
     }
 };
 
+const addDeviceToUser = () => {};
+
 module.exports = {
     createUserDocumnet,
 };

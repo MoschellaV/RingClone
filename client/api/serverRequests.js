@@ -23,3 +23,15 @@ export const deleteUserAccount = (uid) => {
         },
     });
 };
+
+export const addNewDevice = (deviceId) => {
+    return axios({
+        method: "POST",
+        url: "http://localhost:6000/api/user/add-device",
+        data: deviceId,
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+};

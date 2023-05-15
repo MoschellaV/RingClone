@@ -2,9 +2,11 @@ import React, { useContext, useRef, useState } from "react";
 import moment from "moment";
 import { UserContext } from "../../context/UserContext";
 
-import { Button, Stack, Text, AlertDialog } from "native-base";
+import { Button, Stack, Text, AlertDialog, Box } from "native-base";
+
 import { LogOutUser } from "../../utils/LogOutUser";
 import { deleteUserAccount } from "../../api/serverRequests";
+import { UserDevices } from "../../components";
 
 const Profile = () => {
     const { user, setUser } = useContext(UserContext);
@@ -41,18 +43,26 @@ const Profile = () => {
     };
 
     return (
-        <Stack space={4} w="70%" maxW="300px" mx="auto" flex={1} alignItems="center" mt={30}>
-            <Text>{user.email}</Text>
-            <Text>Account Created on {formatDateCreated(user.metadata.creationTime)}</Text>
+        <Stack space={4} w="70%" maxW="300px" mx="auto" flex={1} mt={30}>
+            <Box alignItems="center">
+                <Text>{user.email}</Text>
+                <Text>Account Created on {formatDateCreated(user.metadata.creationTime)}</Text>
+            </Box>
 
             {/* log out button */}
             <Button w="100%" onPress={LogOutUser}>
                 <Text fontSize="md">Log Out</Text>
             </Button>
 
+            {/* user devices section */}
+            <UserDevices />
+
+            <Text fontSize="lg" style={{ fontWeight: "bold" }}>
+                Danger Zone
+            </Text>
             {/* delete button */}
             <Button w="100%" colorScheme="danger" onPress={() => setIsOpen(!isOpen)}>
-                Delete Account
+                <Text fontSize="md">Delete Account</Text>
             </Button>
             <AlertDialog leastDestructiveRef={cancelRef} isOpen={isOpen} onClose={onCloseDeleteModal}>
                 <AlertDialog.Content>
