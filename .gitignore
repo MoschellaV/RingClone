@@ -15,3 +15,6 @@ npm-debug.*
 web-build/
 # firebase config file
 firebaseConfig.js 
+
+# backend
+serviceAccountKey.json

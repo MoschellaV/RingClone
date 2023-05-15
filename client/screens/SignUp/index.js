@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Input, Stack, Pressable, Icon, Text, Button } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
-import { CreateNewUser } from "../../utils/CreateNewUser";
+import { createNewUser } from "../../api/serverRequests";
 
 const SignUp = ({ setShowLogInScreen }) => {
     // hidden password states
@@ -20,20 +20,33 @@ const SignUp = ({ setShowLogInScreen }) => {
     const [submissionResponse, setSubmissionResponse] = useState("");
 
     const userInfoSubmitSignUp = async () => {
-        setLoading(true);
+        setLoading(true); // start loading
 
-        // create a new user
-        const response = await CreateNewUser(emailValue, passwordValue, confirmedPasswordValue);
+        // check if the passwords match
+        if (passwordValue !== confirmedPasswordValue) {
+            setSubmissionResponse("Passwords do not match!");
+        }
 
-        if (response) setLoading(false); // stop loading after recieving a resposne
+        // create user data object to pass to backend
+        const userInfo = {
+            email: emailValue,
+            password: passwordValue,
+        };
 
-        // store response given by function
-        setSubmissionResponse(response);
+        // pass data to backend
+        createNewUser(userInfo)
+            .then((res) => {
+                if (res.status === 200) {
+                    setSubmissionResponse(res.data.message);
+                    setLoading(false);
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                setLoading(false);
+                setSubmissionResponse("Unkown error occured.");
+            });
     };
-
-    useEffect(() => {
-        console.log(submissionResponse);
-    }, [submissionResponse]);
 
     return (
         <Stack space={4} w="70%" maxW="400px" mx="auto" flex={1} alignItems="center" justifyContent="center">
