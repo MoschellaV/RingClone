@@ -1,6 +1,13 @@
-const auth = require("../firebase/firebase.js");
+const auth = require("../Firebase/firebase.js");
 
-const CreateNewUser = async (email, password) => {
+/*
+This is a utility file that handles tasks to do with user accounts.
+
+NOTE - Logging in and Logging out are done on the frontend
+*/
+
+const createNewUser = async (email, password) => {
+    // function that creates a new user, via email and password
     try {
         await auth.createUser({
             email,
@@ -24,6 +31,16 @@ const CreateNewUser = async (email, password) => {
     }
 };
 
+const deleteUserAccount = async (uid) => {
+    try {
+        await auth.deleteUser(uid);
+        return "Successfully deleted user";
+    } catch (error) {
+        return `${error.code} Error deleting user`;
+    }
+};
+
 module.exports = {
-    CreateNewUser,
+    createNewUser,
+    deleteUserAccount,
 };

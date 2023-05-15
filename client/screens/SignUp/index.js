@@ -43,8 +43,8 @@ const SignUp = ({ setShowLogInScreen }) => {
             })
             .catch((err) => {
                 console.error(err);
-                setLoading(false);
                 setSubmissionResponse("Unkown error occured.");
+                setLoading(false);
             });
     };
 

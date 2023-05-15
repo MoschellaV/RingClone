@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 
-export const SignOutUser = () => {
+export const LogOutUser = () => {
     signOut(auth)
         .then(() => {
             // success
