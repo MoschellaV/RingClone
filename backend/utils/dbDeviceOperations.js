@@ -39,7 +39,25 @@ const addDeviceLog = async (deviceId, logInfo) => {
     }
 };
 
+const fetchDeviceLogs = async (deviceId) => {
+    /*
+    fetches the logs of a device 
+    */
+
+    const colRef = db.collection("devices").doc(deviceId).collection("logs");
+
+    try {
+        const snapshot = await colRef.get();
+        const logs = snapshot.docs.map((doc) => doc.data());
+        return logs;
+    } catch (error) {
+        console.error("Error fetching device logs: ", error);
+        return "Unable to fetch device logs.";
+    }
+};
+
 module.exports = {
     verifyDeviceExists,
     addDeviceLog,
+    fetchDeviceLogs,
 };

@@ -73,12 +73,67 @@ router.post("/api/user/get-user-devices", async (req, res) => {
         // error handling
         if (response === "No document found.") {
             res.json({ message: "No document found." });
-        }
-        if (response === "Unable to fetch document.") {
+        } else if (response === "Unable to fetch document.") {
             console.error("Unable to fetch document.");
             res.json({ message: "Unable to fetch document." });
         } else {
             res.json({ message: response });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error occurred while retriving user document." });
+    }
+});
+
+router.post("/api/user/get-user-document", async (req, res) => {
+    const userId = req.body.userId;
+
+    try {
+        // fetching user devices
+        const response = await dbUser.fetchUserDocument(userId);
+
+        // error handling
+        if (response === "No document found.") {
+            res.json({ message: "No document found." });
+        } else if (response === "Unable to fetch document.") {
+            console.error("Unable to fetch document.");
+            res.json({ message: "Unable to fetch document." });
+        } else {
+            res.json({ message: response });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error occurred while retriving user document." });
+    }
+});
+
+router.post("/api/user/get-all-user-logs", async (req, res) => {
+    const userId = req.body.userId;
+
+    try {
+        // fetching user devices
+        const response = await dbUser.fetchUserDevices(userId);
+
+        // error handling
+        if (typeof response === "string") {
+            console.error(response);
+            res.json({ message: response });
+        } else {
+            // if the user  has devices...
+            // promise fetches each device and it's logs
+            const deviceLogPromises = response.map(async (device) => {
+                const logs = await dbDevice.fetchDeviceLogs(device.deviceId);
+                return {
+                    deviceId: device.deviceId,
+                    deviceName: device.deviceName,
+                    logs: logs,
+                };
+            });
+
+            // wait for all promises to resolve
+            const deviceLogs = await Promise.all(deviceLogPromises);
+
+            res.json({ message: "Success", data: deviceLogs });
         }
     } catch (error) {
         console.error(error);
