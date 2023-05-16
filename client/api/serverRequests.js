@@ -47,3 +47,15 @@ export const getUserDevices = (userId) => {
         },
     });
 };
+
+export const getAllUserLogs = (userId) => {
+    return axios({
+        method: "POST",
+        url: "http://localhost:6000/api/user/get-all-user-logs",
+        data: userId,
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+};

@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
-import { Button, Stack, Text, Box, Modal, VStack } from "native-base";
+import { Button, Stack, Text, Box, Modal, VStack, HStack, Spinner } from "native-base";
 import { getUserDevices } from "../../../api/serverRequests";
+
+import LoadingSpinner from "../../LoadingSpinner";
 
 const RenderDevices = () => {
     const { user, setUser } = useContext(UserContext);
     const [devices, setDevices] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchDevices = () => {
@@ -13,14 +16,18 @@ const RenderDevices = () => {
                 userId: user.uid,
             };
 
+            setLoading(true);
+
             getUserDevices(userId)
                 .then((res) => {
                     if (res.status === 200) {
                         setDevices(res.data.message);
+                        setLoading(false);
                     }
                 })
                 .catch((err) => {
                     console.error(err);
+                    setLoading(false);
                 });
         };
 
@@ -46,7 +53,7 @@ const RenderDevices = () => {
         }
     };
 
-    return displayCorrectResponse();
+    return loading ? <LoadingSpinner /> : displayCorrectResponse();
 };
 
 const DeviceItem = ({ deviceName, deviceId }) => {
