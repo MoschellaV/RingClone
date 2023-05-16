@@ -36,7 +36,7 @@ const deleteUserAccount = async (uid) => {
 
     try {
         await auth.deleteUser(uid);
-        return "Successfully deleted user";
+        return "Success";
     } catch (error) {
         return `${error.code} Error deleting user`;
     }

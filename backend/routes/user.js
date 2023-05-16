@@ -33,8 +33,22 @@ router.post("/api/user/delete-user-account", async (req, res) => {
     const uid = req.body.uid;
 
     try {
-        const response = await user.deleteUserAccount(uid);
-        res.json({ message: response });
+        // delete account from firebase auth
+        const deleteUserAuth = await user.deleteUserAccount(uid);
+
+        // delete user stored data from firestore
+        const deleteUserDocument = await dbUser.deleteUserDocument(uid);
+
+        // give success message
+        if (deleteUserAuth === "Success" && deleteUserDocument === "Success") {
+            res.json({ message: "Successfully deleted user." });
+        } else if (deleteUserAuth === "Success" && deleteUserDocument !== "Success") {
+            res.json({ message: "Successfully deleted user document." });
+        } else if (deleteUserAuth !== "Success" && deleteUserDocument === "Success") {
+            res.json({ message: "Successfully deleted user auth." });
+        } else {
+            res.json({ message: "Could not delete user auth and user document." });
+        }
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Error occurred while deleting account." });

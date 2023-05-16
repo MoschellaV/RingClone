@@ -111,9 +111,22 @@ const fetchUserDocument = async (userId) => {
     }
 };
 
+const deleteUserDocument = async (userId) => {
+    const docRef = db.collection("users").doc(userId);
+
+    try {
+        await docRef.delete();
+        return "Success";
+    } catch (error) {
+        console.error("Error removing document: ", error);
+        return "Unable to delete user document";
+    }
+};
+
 module.exports = {
     createUserDocumnet,
     addDeviceToUser,
     fetchUserDevices,
     fetchUserDocument,
+    deleteUserDocument,
 };
