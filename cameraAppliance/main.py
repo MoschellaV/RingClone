@@ -1,8 +1,8 @@
 import cv2 as cv
 from time import sleep
 from threading import Thread
-from toServer import notify_server
-from detectionAndCamera import draw_rect
+from apiNotifyServer import notify_server
+from helper import draw_rect
 
 # to open Camera
 capture = cv.VideoCapture(0) 
@@ -23,7 +23,11 @@ while True:
     
             # implemented a counter so that the server is not spammed with requests
             if counter > 100:
-                notify_server()
+                
+                # start new thread to send request to server 
+                notify_server_thread = Thread(target=notify_server)
+                notify_server_thread.start()
+                
                 counter = 0
                 
             draw_rect(frame, coordinate_list)
