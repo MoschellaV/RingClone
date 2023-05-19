@@ -18,3 +18,7 @@ firebaseConfig.js
 
 # backend
 serviceAccountKey.json
+
+# camera appliance
+**/__pycache__/
+cameraAppliance/dev/
