@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 /*
-This context provies user data from firebase's auth storage
+This context provides data about the user's auth 
 */
 
 const UserContext = createContext();

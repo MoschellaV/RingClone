@@ -36,6 +36,18 @@ export const addNewDevice = (deviceId) => {
     });
 };
 
+export const getUserDocument = (userId) => {
+    return axios({
+        method: "POST",
+        url: "http://localhost:6000/api/user/get-user-document",
+        data: userId,
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+};
+
 export const getUserDevices = (userId) => {
     return axios({
         method: "POST",

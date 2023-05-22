@@ -5,6 +5,7 @@ import { NativeBaseProvider } from "native-base";
 // contexts
 // import theme from "./context/theme";
 import { UserProvider } from "./context/UserContext";
+import { UserDataProvider } from "./context/UserDataContext";
 
 // pages
 import AuthUser from "./utils/AuthUser";
@@ -15,7 +16,9 @@ export default function App() {
             <NavigationContainer>
                 <SafeAreaProvider>
                     <UserProvider>
-                        <AuthUser />
+                        <UserDataProvider>
+                            <AuthUser />
+                        </UserDataProvider>
                     </UserProvider>
                 </SafeAreaProvider>
             </NavigationContainer>
