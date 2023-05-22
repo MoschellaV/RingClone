@@ -15,14 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-// handle video streaming from device to client
-handleVideoStreaming(io);
-
 // routes that interact with front end
 app.use(userRoutes);
 
 // routes that interact the the device/camera appliance
 app.use(deviceRoutes);
+handleVideoStreaming(io); // handle video streaming from device to client
 
 app.get("/", (req, res) => {
     res.send("Hello!");
