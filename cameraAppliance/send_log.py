@@ -5,9 +5,9 @@ from pytz import timezone
 # importing unique device id
 # a unique id would be hard coded into every device
 # the device's id would also be stored in firestore db for authentication
-from deviceConfig import device_id
+from device_CONFIG import device_id
 
-def notify_server():
+def detected_person():
     '''
     Sends a post request to the server. Post request includes a message that
     a face was detected and the time it was detected.

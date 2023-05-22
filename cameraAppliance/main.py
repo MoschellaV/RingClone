@@ -1,7 +1,7 @@
 import cv2 as cv
 from time import sleep
 from threading import Thread
-from apiNotifyServer import notify_server
+from send_log import detected_person
 from helper import draw_rect
 
 # to open Camera
@@ -25,8 +25,8 @@ while True:
             if counter > 100:
                 
                 # start new thread to send request to server 
-                notify_server_thread = Thread(target=notify_server)
-                notify_server_thread.start()
+                detected_person_thread = Thread(target=detected_person)
+                detected_person_thread.start()
                 
                 counter = 0
                 
