@@ -21,4 +21,5 @@ serviceAccountKey.json
 
 # camera appliance
 **/__pycache__/
+cameraAppliance/env/
 cameraAppliance/dev/

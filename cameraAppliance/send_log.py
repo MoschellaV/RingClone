@@ -14,20 +14,16 @@ def detected_person():
     '''
     
     url = "http://10.0.0.40:6000/api/device/add-log/{}".format(device_id)
-    print(url)
     payload= { "status": "FACE DETECTED", "time": fetch_time()}
-    headers = {"Content-Type": "application/json"}
     
-    try:
-        print("Face detected. Telling the server.")
+    try:        
+        headers = {"Content-Type": "application/json"}
+        response = requests.post(url, json=payload, headers=headers)
         
-        r = requests.post(url, json=payload, headers=headers)
-        
-        print("Server sent status code: {}".format(r.content))
+        print("Add log response: {}".format(response.status_code))
     
-    except:
-        print("ERROR")
-        
+    except requests.exceptions.RequestException as err:
+        print("Error sending log:", err)        
     
 def fetch_time():
     '''

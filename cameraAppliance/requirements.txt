@@ -1,10 +1,13 @@
+bidict
 certifi
 charset-normalizer
 idna
 numpy
 opencv-python==4.7.0.72
-pip
+python-engineio==4.4.1
+python-socketio==5.8.0
 pytz
 requests
-setuptools==58.0.4
+setuptools
 urllib3==1.26.6
+websocket-client==1.5.2

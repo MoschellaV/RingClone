@@ -2,6 +2,7 @@ import cv2 as cv
 from time import sleep
 from threading import Thread
 from send_log import detected_person
+from stream_video import send_video_frame
 from helper import draw_rect
 
 # to open Camera
@@ -36,9 +37,12 @@ while True:
 
         # display detected face
         cv.imshow("Live Face Detection", frame)
-           
+        
+        # send captured frames to server
+        send_video_frame(frame)
+
         # condition to break out of while loop
-        # clicking the 'x' key
+        # clicking the 'x' key 
         if cv.waitKey(20) == ord('x'):
             break
 
