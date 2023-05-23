@@ -8,8 +8,7 @@ import { auth } from "../Firebase/firebaseConfig";
 import { IncomingUser } from "../screens";
 
 // Navbar to render pages for verified user
-import Navbar from "../components/Navbar";
-import FullScreenSpinner from "../components/FullScreenSpinner";
+import { Navbar, FullScreenSpinner, FullScreenError } from "../components";
 
 // pages
 import LiveVideo from "../screens/LiveVideo";
@@ -28,11 +27,13 @@ const UnVerifiedUserScreen = () => {
 
 // ~ what a user will see if they are authenticated
 const VerifiedUserScreen = () => {
-    const { userData, isLoading } = useUserData();
+    const { userData, isLoading, failToLoadData } = useUserData();
 
     // wait for userData to get stored in context before loading app
     return isLoading ? (
         <FullScreenSpinner />
+    ) : failToLoadData ? (
+        <FullScreenError />
     ) : (
         <Navbar liveVideo={LiveVideo} detectionLogs={DetectionLogs} profile={Profile} />
     );

@@ -6,8 +6,6 @@ import RenderVideoStream from "./RenderVideoStream";
 const DisplayVideoStream = () => {
     const { userData, isLoading } = useUserData();
 
-    // console.log(userData.userDevices);
-
     const renderStreams = () => {
         if (userData) {
             const devices = userData.userDevices;

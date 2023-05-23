@@ -7,6 +7,7 @@ const useUserData = () => {
     const { user } = useContext(UserContext);
     const { userData, setUserData } = useContext(UserDataContext);
     const [isLoading, setIsLoading] = useState(false);
+    const [failToLoadData, setFailToLoadData] = useState(false);
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -16,9 +17,16 @@ const useUserData = () => {
             };
             try {
                 const userData = await getUserDocument(userId);
-                setUserData(userData.data.message);
-            } catch (error) {
-                // handle error
+                if (userData.data.status === 200) {
+                    setUserData(userData.data.message);
+                    setFailToLoadData(false);
+                } else {
+                    setFailToLoadData(true);
+                    console.error(`Failed to Load User Data`);
+                }
+            } catch (err) {
+                setFailToLoadData(true);
+                console.error(`Failed to Load User Data: ${err}`);
             } finally {
                 setIsLoading(false);
             }
@@ -30,6 +38,7 @@ const useUserData = () => {
     return {
         userData,
         isLoading,
+        failToLoadData,
     };
 };
 
