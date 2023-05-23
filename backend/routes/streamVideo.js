@@ -17,7 +17,6 @@ const handleVideoStreaming = (io) => {
 
         // handle incoming video frames
         socket.on("videoFrame", (frameData) => {
-            console.log("video recieved");
             // broadcast frame to other devices in the same room
             // (client, and any user with the device's id)
             socket.to(deviceId).emit("videoFrame", frameData);
