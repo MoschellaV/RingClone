@@ -16,7 +16,7 @@ const useUserData = () => {
             };
             try {
                 const userData = await getUserDocument(userId);
-                setUserData(userData.data);
+                setUserData(userData.data.message);
             } catch (error) {
                 // handle error
             } finally {

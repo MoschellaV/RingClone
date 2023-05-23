@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import useUserData from "../../hooks/useUserData";
+import { View } from "react-native";
 import DisplayVideoStream from "../../components/DisplayVideoStream";
+import { ScrollView } from "native-base";
 
 const LiveVideo = () => {
-    const { userData, isLoading } = useUserData();
-
-    if (!isLoading) console.log("hh" + userData);
-
     return (
-        <View style={{ flex: 1 }}>
-            <DisplayVideoStream />
-        </View>
+        <ScrollView>
+            <View style={{ flex: 1 }}>
+                <DisplayVideoStream />
+            </View>
+        </ScrollView>
     );
 };
 

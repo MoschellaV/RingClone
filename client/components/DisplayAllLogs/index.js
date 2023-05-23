@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import moment from "moment";
 import { UserContext } from "../../context/UserContext";
-import { ScrollView, Stack } from "native-base";
+import { Stack } from "native-base";
 import { getAllUserLogs } from "../../api/serverRequests";
 import RenderLogs from "./RenderLogs";
 
@@ -57,11 +57,9 @@ const DisplayAllLogs = () => {
     }, []);
 
     return (
-        <ScrollView>
-            <Stack space={4}>
-                <RenderLogs allDevicesAndLogs={allDevicesAndLogs} loading={loading} />
-            </Stack>
-        </ScrollView>
+        <Stack space={4}>
+            <RenderLogs allDevicesAndLogs={allDevicesAndLogs} loading={loading} />
+        </Stack>
     );
 };
 
