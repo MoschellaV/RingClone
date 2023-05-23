@@ -1,17 +1,24 @@
 ## just some notes -- will clean up this readme
 
 ### for cameraAppliance
-Note I built the camera appliance on a raspberry pi (specifically a Raspberry Pi 3 Model B+)
-So this setup process works for the Rasperry Pi OS
+You must have **python 3.7+** (I used python 3.9 while making this, but it should work for python 3.7+)
 
-You must be have python 3.6+ (note I used python 3.9.16 while making this, but it should work for python 3.6+)
+To set up virtual environemnt (macOS) use...
+<br/>
+**make sure you're using the correct version of python to set up the environment**
+<br/>
+- python -m venv env
+- source env/bin/activate
 
-Set up virtual environemnt
-python3.9 -m venv dev
-source dev/bin/activate
+<br/>
 
-To install requirements use pip3.9 install -r requirements.txt
-To run the software for the camera use python3.9 main.py
+To install requirements use...
+- pip install -r requirements.txt
+
+<br/>
+
+To run the software for the camera use... <br/>
+- python3 main.py
 
 ### for server
 
