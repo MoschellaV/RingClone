@@ -15,6 +15,12 @@ connection_url = 'http://10.0.0.40:6000/api/stream-video?deviceId=' + device_id
 # connect to server
 sio.connect(connection_url, namespaces=['/api/stream-video'])
 
+# check if connect was a success
+if sio.connected:
+    print('Connection to the server was successful.')
+else:
+    print('Failed to connect to the server.')
+
 @sio.event
 def connect():
     print('Connected to the server')

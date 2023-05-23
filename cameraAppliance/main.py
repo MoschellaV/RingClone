@@ -23,7 +23,7 @@ while True:
         if len(coordinate_list) > 0:
     
             # implemented a counter so that the server is not spammed with requests
-            if counter > 100:
+            if counter > 200:
                 
                 # start new thread to send request to server 
                 detected_person_thread = Thread(target=detected_person)
