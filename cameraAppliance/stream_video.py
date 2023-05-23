@@ -34,7 +34,6 @@ def send_video_frame(frame):
     try:
         # emit the frame to the server
         sio.emit('videoFrame', base64_frame, namespace='/api/stream-video')
-        print('Sent frame')
 
     except Exception as err:
         print('Error sending frame:', err)
