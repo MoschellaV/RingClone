@@ -108,12 +108,12 @@ router.post("/api/user/get-user-document", async (req, res) => {
 
         // error handling
         if (response === "No document found.") {
-            res.json({ message: "No document found." });
+            res.status(500).json({ message: "No document found." });
         } else if (response === "Unable to fetch document.") {
             console.error("Unable to fetch document.");
-            res.json({ message: "Unable to fetch document." });
+            res.status(500).json({ message: "Unable to fetch document." });
         } else {
-            res.json({ message: response });
+            res.status(200).json({ message: response });
         }
     } catch (error) {
         console.error(error);
