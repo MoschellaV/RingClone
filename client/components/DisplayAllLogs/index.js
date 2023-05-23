@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import moment from "moment";
 import { UserContext } from "../../context/UserContext";
-import { Stack } from "native-base";
+import { ScrollView, Stack } from "native-base";
 import { getAllUserLogs } from "../../api/serverRequests";
 import RenderLogs from "./RenderLogs";
 
@@ -57,9 +57,11 @@ const DisplayAllLogs = () => {
     }, []);
 
     return (
-        <Stack space={4} flex={loading && 1} justifyContent={loading && "center"}>
-            <RenderLogs allDevicesAndLogs={allDevicesAndLogs} loading={loading} />
-        </Stack>
+        <ScrollView>
+            <Stack space={4}>
+                <RenderLogs allDevicesAndLogs={allDevicesAndLogs} loading={loading} />
+            </Stack>
+        </ScrollView>
     );
 };
 
