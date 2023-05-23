@@ -1,19 +1,16 @@
 import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import useUserData from "../../hooks/useUserData";
+import DisplayVideoStream from "../../components/DisplayVideoStream";
 
 const LiveVideo = () => {
-    const { userData, fetchUserData } = useUserData();
+    const { userData, isLoading } = useUserData();
 
-    useEffect(() => {
-        fetchUserData();
-    }, []);
-
-    console.log(userData);
+    if (!isLoading) console.log("hh" + userData);
 
     return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Live Video!</Text>
+        <View style={{ flex: 1 }}>
+            <DisplayVideoStream />
         </View>
     );
 };

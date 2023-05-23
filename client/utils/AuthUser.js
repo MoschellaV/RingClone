@@ -16,8 +16,9 @@ import LiveVideo from "../screens/LiveVideo";
 import DetectionLogs from "../screens/DetectionLogs";
 import Profile from "../screens/Profile";
 
-// user context ~ must set user data in context for ease of access
-import { UserContext } from "../context/UserContext";
+// contexts
+import { UserContext } from "../context/UserContext"; // to set user auth data in context
+import useUserData from "../hooks/useUserData"; // to set user data (document data in firestore) in context
 
 // auth verification
 // ~ what a user will see if they are not authenticated
@@ -27,7 +28,14 @@ const UnVerifiedUserScreen = () => {
 
 // ~ what a user will see if they are authenticated
 const VerifiedUserScreen = () => {
-    return <Navbar liveVideo={LiveVideo} detectionLogs={DetectionLogs} profile={Profile} />;
+    const { userData, isLoading } = useUserData();
+
+    // wait for userData to get stored in context before loading app
+    return isLoading ? (
+        <FullScreenSpinner />
+    ) : (
+        <Navbar liveVideo={LiveVideo} detectionLogs={DetectionLogs} profile={Profile} />
+    );
 };
 
 const AuthUser = () => {

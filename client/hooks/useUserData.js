@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import { UserDataContext } from "../context/UserDataContext";
 import { getUserDocument } from "../api/serverRequests";
@@ -6,19 +6,30 @@ import { getUserDocument } from "../api/serverRequests";
 const useUserData = () => {
     const { user } = useContext(UserContext);
     const { userData, setUserData } = useContext(UserDataContext);
+    const [isLoading, setIsLoading] = useState(false);
 
-    const fetchUserData = async () => {
-        const userId = {
-            userId: user.uid,
+    useEffect(() => {
+        const fetchUserData = async () => {
+            setIsLoading(true);
+            const userId = {
+                userId: user.uid,
+            };
+            try {
+                const userData = await getUserDocument(userId);
+                setUserData(userData.data);
+            } catch (error) {
+                // handle error
+            } finally {
+                setIsLoading(false);
+            }
         };
 
-        const userData = await getUserDocument(userId);
-        setUserData(userData.data);
-    };
+        fetchUserData();
+    }, [user, setUserData]);
 
     return {
         userData,
-        fetchUserData,
+        isLoading,
     };
 };
 
