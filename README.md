@@ -1,3 +1,63 @@
+# Rang
+
+<p align="center">
+  <img src="https://github.com/MoschellaV/RingClone/assets/58868225/e0496f35-8680-4592-b5c1-b1a6c32b82ae" alt="icon copy" width="200">
+</p>
+
+<p align="center">A ring clone.</p>
+
+## Table of Contents
+- [About The Project](#about-the-project)
+  - [Tech Used](#tech-used)
+  - [What I Learned](#what-i-learned)
+- [Setup & Installation](#setup--installation)
+  - [Prerequisites](#prerequisites) 
+  - [Backend](#backend)
+  - [Frontend (client)](#frontend-client)
+  - [Camera Appliance](#camera-appliance)
+- [Usage](#usage)
+- [Contact](#contact)
+
+## About The Project
+
+...
+
+### Tech Used
+
+...
+
+### What I Learned
+
+...
+
+## Setup & Installation
+
+...
+
+### Prerequisites
+
+...
+
+### Backend
+
+...
+
+### Frontend (client)
+
+...
+
+### Camera Appliance
+
+...
+
+## Usage
+
+...
+
+## Contact
+
+...
+
 ## just some notes -- will clean up this readme
 
 ### for cameraAppliance
