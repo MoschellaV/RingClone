@@ -4,7 +4,7 @@
   <img src="https://github.com/MoschellaV/RingClone/assets/58868225/e0496f35-8680-4592-b5c1-b1a6c32b82ae" alt="icon copy" width="200">
 </p>
 
-<p align="center">A ring clone.</p>
+<p align="center">A ring clone (yes, the doorbell one).</p>
 
 ## Table of Contents
 - [About The Project](#about-the-project)
