@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import { Stack } from "native-base";
 import { getAllUserLogs } from "../../api/serverRequests";
 import RenderLogs from "./RenderLogs";
+import NoDevicesMessage from "../NoDevicesMessage";
 
 const DisplayAllLogs = () => {
     const { user, setUser } = useContext(UserContext);
@@ -58,7 +59,11 @@ const DisplayAllLogs = () => {
 
     return (
         <Stack space={4}>
-            <RenderLogs allDevicesAndLogs={allDevicesAndLogs} loading={loading} />
+            {allDevicesAndLogs === 0 ? (
+                <NoDevicesMessage />
+            ) : (
+                <RenderLogs allDevicesAndLogs={allDevicesAndLogs} loading={loading} />
+            )}
         </Stack>
     );
 };

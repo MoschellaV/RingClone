@@ -17,7 +17,8 @@ const useUserData = () => {
             };
             try {
                 const userData = await getUserDocument(userId);
-                if (userData.data.status === 200) {
+
+                if (userData.status === 200) {
                     setUserData(userData.data.message);
                     setFailToLoadData(false);
                 } else {
@@ -33,7 +34,7 @@ const useUserData = () => {
         };
 
         fetchUserData();
-    }, [user, setUserData]);
+    }, []);
 
     return {
         userData,

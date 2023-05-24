@@ -13,8 +13,6 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-# firebase config file
-firebaseConfig.js 
 
 # backend
 serviceAccountKey.json

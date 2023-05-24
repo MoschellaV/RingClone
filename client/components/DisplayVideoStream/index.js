@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import useUserData from "../../hooks/useUserData";
 import { Stack } from "native-base";
 import RenderVideoStream from "./RenderVideoStream";
+import NoDevicesMessage from "../NoDevicesMessage";
 
 const DisplayVideoStream = () => {
     const { userData, isLoading } = useUserData();
@@ -9,9 +10,18 @@ const DisplayVideoStream = () => {
     const renderStreams = () => {
         if (userData) {
             const devices = userData.userDevices;
-            return devices.map((device) => (
-                <RenderVideoStream key={device.deviceId} deviceId={device.deviceId} deviceName={device.deviceName} />
-            ));
+
+            return devices.length > 0 ? (
+                devices.map((device) => (
+                    <RenderVideoStream
+                        key={device.deviceId}
+                        deviceId={device.deviceId}
+                        deviceName={device.deviceName}
+                    />
+                ))
+            ) : (
+                <NoDevicesMessage />
+            );
         }
     };
 

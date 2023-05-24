@@ -2,6 +2,7 @@ export { default as Navbar } from "./Navbar";
 export { default as FullScreenSpinner } from "./FullScreenSpinner";
 export { default as LoadingSpinner } from "./LoadingSpinner";
 export { default as FullScreenError } from "./FullScreenError";
+export { default as NoDevicesMessage } from "./NoDevicesMessage";
 
 // live video components
 export { deafult as DisplayVideoStream } from "./DisplayVideoStream";
