@@ -19,10 +19,10 @@ const RenderLogs = ({ allDevicesAndLogs, loading }) => {
                                 borderColor="muted.900"
                                 borderWidth={1.5}
                                 borderRadius={10}
-                                pl={3}
+                                pl={2}
                                 pt={0.5}
-                                pb={0.5}
-                                pr={3}
+                                pb={0}
+                                pr={2}
                             >
                                 <Flex
                                     direction="row"
@@ -34,7 +34,7 @@ const RenderLogs = ({ allDevicesAndLogs, loading }) => {
                                     <Flex direction="row" alignItems="center">
                                         <AntDesign
                                             name="exclamationcircleo"
-                                            size={24}
+                                            size={20}
                                             color="black"
                                             style={{ paddingRight: 5 }}
                                         />
