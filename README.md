@@ -28,7 +28,7 @@ Anyway, this project aims to replicate some of ring's features and system design
 Some features!
 
 - **Live Video Streaming:** Users can access real-time video feeds from their cameras, allowing them to see visitors remotely.
-- **Face Detection:** The system is equipped with an advanced face detection model that alerts users when there human activity in front of the camera.
+- **Face Detection:** The system is equipped with an advanced face detection model that alerts users when there is human activity in front of the camera.
 - **Supports Multiple Cameras:** Users can add any amount of cameras whether it be a camera monitoring the front door, garage, or back door.
 - **Cloud Storage:** Recorded face detection logs, camera device data, and user data is securely stored in the cloud, providing convenient access and retrieval at any time.
 - **User Accounts**: Securely create a user profile where you can manage your devices.
