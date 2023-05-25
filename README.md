@@ -13,7 +13,7 @@
   - [What I Learned](#-what-i-learned)
 - [Setup & Installation](#setup--installation)
   - [Start Here](#start-here) 
-  - [Backend](#backend)
+  - [Back-end](#back-end--firebase)
   - [Frontend (client)](#frontend-client)
   - [Camera Appliance](#camera-appliance)
 - [Usage](#usage)
@@ -24,6 +24,8 @@
 Imagine ring, now hopefully your memory is blurry because you're looking at Rang. 
 
 Anyway, this project aims to replicate some of ring's features and system design. I could've done something _simpler_ :woozy_face: but honestly doing a twitter, spotify, or a youtube clone is boringggg, like there's tutorials on that. But making a ring clone...  haven't seen a tutorial on it _yet_.
+
+<br/>
 
 ### 🚀 Features
 Some features!
@@ -56,21 +58,39 @@ _Side Note_ ~ I envisioned that if this were a real product you could have a scr
 
 ## Setup & Installation
 
-...
-
 ### Start Here
+Want to set it up? Just follow this portion of the ReadMe _in order_.
 
-...
+<br/>
 
-#### Prerequisites
+### Prerequisites
+You're gonna need some stuff first...
+<br/>
+<br/>
+To start make sure you have node.js. (I'm mentioning it up here because **you need it for both the front and back end**.)
+1. **Install Node.js**: make sure you are using `node.js` version `>= v16.16.0` and `npm` version `>=8.11.0` .If you don't have it node, install it [here](https://nodejs.org/en).
 
-...
+#### Prerequisites ~ Back-end & Firebase
+2. **Google Account**: make sure you have a google account because we will be using it for `Firebase` later.
 
-#### Cloning
+#### Prerequisites ~ Frontend (client)
+3. **Expo**: letting you know this project uses `expo` but you won't need to install anything since it leverages npx, you can read more about it [here](https://docs.expo.dev/get-started/installation/#recommended-tools).
+4. **Emulator**: make sure you have an emulator either `iOS` or `Android`. I would strongly recommend the [iOS Simulator](https://docs.expo.dev/workflow/ios-simulator/) or [Android Studio](https://docs.expo.dev/workflow/android-studio-emulator/).
 
-...
+#### Prerequisites ~ Camera Appliace 
+5. **Python**: ensure you have `python 3.9+`
 
-### Backend
+<br/>
+
+### Cloning
+Next, clone the repo. <br/>
+Move to whatever directory you want to clone into and run:
+```
+git clone https://github.com/MoschellaV/RingClone.git
+```
+<br/>
+
+### Back-end & Firebase
 
 ...
 
