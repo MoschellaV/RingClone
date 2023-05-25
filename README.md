@@ -32,7 +32,7 @@ Some features!
 - **Supports Multiple Cameras:** Users can add any amount of cameras whether it be a camera monitoring the front door, garage, or back door.
 - **Cloud Storage:** Recorded face detection logs, camera device data, and user data is securely stored in the cloud, providing convenient access and retrieval at any time.
 - **User Accounts**: Securely create a user profile where you can manage your devices.
-- **Mobile App Integration:** The project includes a mobile application that allows users to control and manage their accounts and camera devices from their IOS or Android devices.
+- **Mobile App Integration:** Mobile app for both IOS and Andriod users.
 <br/>
 
 ### Tech Used
