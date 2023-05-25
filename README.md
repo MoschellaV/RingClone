@@ -8,6 +8,7 @@
 
 ## Table of Contents
 - [About The Project](#about-the-project)
+  - [Features](#features)
   - [Tech Used](#tech-used)
   - [What I Learned](#what-i-learned)
 - [Setup & Installation](#setup--installation)
@@ -20,15 +21,31 @@
 
 ## About The Project
 
-...
+### Features
+Rang offers the core features of Ring, some of which include:
+
+- **Live Video Streaming:** Users can access real-time video feeds from their cameras, allowing them to see visitors remotely.
+- **Face Detection:** The system is equipped with an advanced face detection model that alerts users when there human activity in front of the camera.
+- **Supports Multiple Cameras:** Users can add any amount of cameras whether it be a camera monitoring the front door, garage, or back door.
+- **Cloud Storage:** Recorded face detection logs, camera device data, and user data is securely stored in the cloud, providing convenient access and retrieval at any time.
+- **User Accounts**: Securely create a user profile where you can manage your devices.
+- **Mobile App Integration:** The project includes a mobile application that allows users to control and manage their accounts and camera devices from their IOS or Android devices.
+<br/>
 
 ### Tech Used
+Rang is built using a combination of modern technologies, frameworks and libraries. The technologies I decided to use are: 
 
-...
+- **Node.js** for the backend, handling requests, server-side processing and server-side logic.
+- **Firebase** for user authentication, database management, and secure cloud storage.
+- **React Native** for a cross-platform mobile app and consistent user experience.
+- **NativeBase** for a more appealing user interface.
+- **Python (OpenCV)** for image processing, face recognition, and analysis.
+- **WebSockets** for fast real-time communication and video streaming.
+<br/>
 
 ### What I Learned
-
-...
+I learned a ton while developing this clone of ring. Before this project I had never worked with Firebase, OpenCV, WebSockets or React Native (I have used a lot of React tho). Nonetheless, it was great to combine different tech and make something functional and pretty cool. On top of the coding I also looked a bit into systems design/overall architecture of the project. I had to think how I wanted the client, server, and camera(s) to interact with one another and I wanted to make it scalable. A quick example of this would be me realizing that if I wanted users to be able to connect to their camera(s) from anywhere, I would need my server to act kinda like the middleman. I also needed a way to verify the camera devices, so I decided that each camera would be associated with an ID which would be coded in the database and in that camera. When users want to add a device they can enter in the ID and some server-side logic verifies it, then adds it to the user profile. (i envisioned that if this were a real product you could have a script to automate ID's being coded in the database and a script to code the ID into the camera. When the user buys a camera it would come with it's ID. 
+<br/>
 
 ## Setup & Installation
 
