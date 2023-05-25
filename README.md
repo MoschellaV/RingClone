@@ -22,7 +22,7 @@
 ## About The Project & Inspo
 Imagine ring, now hopefully your memory is blurry because you're looking at Rang. 
 
-Anyway, this project aims to replicate some of ring's features and system design. I could've done something _simpler_ :woozy_face: but honestly doing a twitter clone, spotify clone, or a youtube clone is boringggg, like there's tutorials on that. But making a ring clone...  haven't seen a tutorial on it _yet_.
+Anyway, this project aims to replicate some of ring's features and system design. I could've done something _simpler_ :woozy_face: but honestly doing a twitter, spotify, or a youtube clone is boringggg, like there's tutorials on that. But making a ring clone...  haven't seen a tutorial on it _yet_.
 
 ### Features
 Some features!
