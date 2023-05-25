@@ -12,7 +12,7 @@
   - [Tech Used](#tech-used)
   - [What I Learned](#what-i-learned)
 - [Setup & Installation](#setup--installation)
-  - [Prerequisites](#prerequisites) 
+  - [Start Here](#start-here) 
   - [Backend](#backend)
   - [Frontend (client)](#frontend-client)
   - [Camera Appliance](#camera-appliance)
@@ -57,7 +57,15 @@ _Side Note_ ~ I envisioned that if this were a real product you could have a scr
 
 ...
 
-### Prerequisites
+### Start Here
+
+...
+
+#### Prerequisites
+
+...
+
+#### Cloning
 
 ...
 
