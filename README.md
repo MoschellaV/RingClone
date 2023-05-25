@@ -17,7 +17,7 @@
   - [Frontend (client)](#frontend-client)
   - [Camera Appliance](#camera-appliance)
 - [Usage](#usage)
-- [Contact](#contact)
+- [Contact](#-contact)
 <br/>
 
 ## 📄 About The Project & Inspo
