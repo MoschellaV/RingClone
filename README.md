@@ -7,7 +7,7 @@
 <p align="center">A ring clone (yes, the doorbell one).</p>
 
 ## 📖 Table of Contents
-- [About The Project](#-about-the-project--inspo)
+- [About The Project & Inspo](#-about-the-project--inspo)
   - [Features](#-features)
   - [Tech Used](#-tech-used)
   - [What I Learned](#-what-i-learned)
@@ -86,9 +86,13 @@ _Side Note_ ~ I envisioned that if this were a real product you could have a scr
 
 ...
 
-## Contact
+## 📨 Contact
+Got questions? Feel free to reach out!
 
-...
+- [Email](mailto:vincemoschella04@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/moschellav/)
+
+You can also open an issue on this GitHub repo if you find any problems.
 
 ## just some notes -- will clean up this readme
 
