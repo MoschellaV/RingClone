@@ -11,8 +11,8 @@
   - [Features](#-features)
   - [Tech Used](#-tech-used)
   - [What I Learned](#-what-i-learned)
-- [Setup & Installation](#setup--installation)
-  - [Start Here](#start-here) 
+- [Setup & Installation](#-setup--installation)
+  - [Start Here](#-start-here) 
   - [Back-end](#back-end--firebase)
   - [Frontend (client)](#frontend-client)
   - [Camera Appliance](#camera-appliance)
@@ -56,14 +56,12 @@ _Side Note_ ~ I envisioned that if this were a real product you could have a scr
 
 <br/>
 
-## Setup & Installation
+## 🛠️ Setup & Installation
 
-### Start Here
+### 🎯 Start Here
 Want to set it up? Just follow this portion of the ReadMe _in order_.
 
-<br/>
-
-### Prerequisites
+### ⚙️ Prerequisites
 You're gonna need some stuff first...
 <br/>
 <br/>
@@ -80,9 +78,7 @@ To start make sure you have node.js. (I'm mentioning it up here because **you ne
 #### Prerequisites ~ Camera Appliace 
 5. **Python**: ensure you have `python 3.9+`
 
-<br/>
-
-### Cloning
+### 🔄 Cloning
 Next, clone the repo. <br/>
 Move to whatever directory you want to clone into and run:
 ```
