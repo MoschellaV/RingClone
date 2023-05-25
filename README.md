@@ -49,7 +49,7 @@ Rang uses modern tech, frameworks and libraries. And here it is...
 ### What I Learned
 I learned a ton while developing this clone of ring. Before this project I had never worked with Firebase, OpenCV, WebSockets or React Native (I have used a lot of React tho). Nonetheless, it was great to combine different tech and make something functional and pretty cool. On top of the coding I also looked a bit into systems design/overall architecture of the project. I had to think how I wanted the client, server, and camera(s) to interact with one another and I wanted to make it scalable. A quick example of this would be me realizing that if I wanted users to be able to connect to their camera(s) from anywhere, I would need my server to act kinda like the middleman. I also needed a way to verify the camera devices, so I decided that each camera would be associated with an unique ID which would be written into the database and coded in the camera. When users want to add a camera they can enter in the ID and some server-side logic verifies it, then adds it to the user profile. 
 
-_Side Note_ ~ I envisioned that if this were a real product you could have a script to automate ID's being written into the database and another script to code the ID into the camera. When a customer buys a camera it would come with it's unique ID. (I think this is actually how ring does it but users add their doorbell via a QR code) 
+_Side Note_ ~ I envisioned that if this were a real product you could have a script to automate ID's being written into the database and another script to code the ID into the camera. When a customer buys a camera it would come with it's unique ID. (I think this is actually how ring does it but users add their doorbell via QR code) 
 
 <br/>
 
