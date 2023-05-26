@@ -4,6 +4,7 @@ charset-normalizer
 idna
 numpy
 opencv-python==4.7.0.72
+python-dotenv
 python-engineio==4.4.1
 python-socketio==5.8.0
 pytz
