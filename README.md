@@ -11,7 +11,7 @@
   - [Features](#-features)
   - [Tech Used](#-tech-used)
   - [What I Learned](#-what-i-learned)
-- [Setup & Installation](#-setup--installation)
+- [Setup & Installation](#%EF%B8%8F-setup--installation)
   - [Start Here](#-start-here) 
   - [Frontend & Firebase](#-frontend--firebase)
   - [Back-end](#-back-end)
