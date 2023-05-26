@@ -14,7 +14,7 @@
 - [Setup & Installation](#%EF%B8%8F-setup--installation)
   - [Start Here](#-start-here) 
   - [Frontend & Firebase](#-frontend--firebase)
-  - [Back-end](#-back-end)
+  - [Backend](#-backend)
   - [Camera Appliance](#-camera-appliance)
   - [Running It All](#-running-it-all)
 - [Usage](#-usage)
@@ -158,7 +158,7 @@ Now we have to set up Firebase.
 
 <br/>
 
-### ⚙ Back-end 
+### ⚙ Backend 
 From the root directory move into the `/backend` folder.
 ```
 cd backend
@@ -229,8 +229,8 @@ But first we need to add our camera to the database, I mentioned this in the [Wh
 
 <br/>
 
-#### Starting up Back-end
-First we will start the back-end.<br/>
+#### Starting up Backend
+First we will start the backend.<br/>
 Open a new terminal  in the root directory and `cd backend`.<br/>
 Run the following to start the server...
 ```
