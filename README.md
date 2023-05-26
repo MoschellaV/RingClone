@@ -77,7 +77,7 @@ You're gonna need some stuff first...
 <br/>
 <br/>
 To start make sure you have node.js. (I'm mentioning it up here because **you need it for both the front and back end**.)
-1. **Install Node.js**: make sure you are using `node.js` version `>= v16.16.0` and `npm` version `>=8.11.0` .If you don't have it node, install it [here](https://nodejs.org/en).
+1. **Install Node.js**: make sure you are using `node.js` version `>= v16.16.0` and `npm` version `>=8.11.0` .If you don't have node, install it [here](https://nodejs.org/en).
 
 #### Prerequisites ~ Firebase
 2. **Google Account**: make sure you have a google account because we will be using it for `Firebase` later.
@@ -152,6 +152,8 @@ Now we have to set up Firebase.
     - Enable Email/Password
     
     <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/b2dd4b92-abce-4893-9449-e9e9c7b15b93">
+    
+    - Click Save
     
 12. Setup Firestore.
  - Go to the firebase console and click `Cloud Firestore`.
@@ -248,7 +250,7 @@ npm start
 <br/>
 
 #### Starting up Frontend
-Next the frontend with.<br/>
+Next we'll start the frontend.<br/>
 Open a new terminal and `cd client`. <br/>
 Then run the following...
 ```
