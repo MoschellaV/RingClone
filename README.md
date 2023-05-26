@@ -186,7 +186,7 @@ Now we have to setup firebase admin.
 <br/>
 
 ### 📸 Camera Appliance
-Move into the `/cameraAppliance` directory with:
+From the root directory move into the `/cameraAppliance` folder.
 ```
 cd cameraAppliance
 ```
