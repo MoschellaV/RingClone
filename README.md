@@ -14,7 +14,7 @@
 - [Setup & Installation](#-setup--installation)
   - [Start Here](#-start-here) 
    - [Frontend (client) & Firebase](#frontend-client--firebase)
-  - [Back-end](#back-end--firebase)
+  - [Back-end](#back-end)
   - [Camera Appliance](#camera-appliance)
 - [Usage](#usage)
 - [Contact](#-contact)
