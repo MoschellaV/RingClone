@@ -84,7 +84,7 @@ To start make sure you have node.js. (I'm mentioning it up here because **you ne
 
 #### Prerequisites ~ Frontend
 3. **Expo**: letting you know this project uses `expo` but you won't need to install anything since it leverages npx, you can read more about it [here](https://docs.expo.dev/get-started/installation/#recommended-tools).
-4. **Emulator**: make sure you have an emulator either `iOS` or `Android`. I would strongly recommend the [iOS Simulator](https://docs.expo.dev/workflow/ios-simulator/) or [Android Studio](https://docs.expo.dev/workflow/android-studio-emulator/).
+4. **Emulator OR Phone**: make sure you have either an emulator (`iOS` or `Android`). I would strongly recommend the [iOS Simulator](https://docs.expo.dev/workflow/ios-simulator/) or [Android Studio](https://docs.expo.dev/workflow/android-studio-emulator/). OR a phone (iPhone or Android) if you want to use your phone you need to download `Expo Go` from the App Store/Google Play Store.
 
 #### Prerequisites ~ Camera Appliace 
 5. **Python**: ensure you have `python 3.9+`
@@ -108,6 +108,17 @@ Next, install all packages and dependencies.
 npm install
 ```
 
+Frontend Setup
+1. Create a `.env` file in the `/client` folder.
+
+   <img width="290" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/a21e5cea-c476-4611-876e-7d0f6f593857">
+   
+2. Find your IP address and paste the following in the `.env` file.
+    Note: _92.199.137.15 is a fake IP for demonstration purposes, 6000 is the port (you can change the port if you want)_
+    ```env
+    SERVER_URL=http://92.199.137.15:6000
+    ```
+
 Now we have to set up Firebase.
 1. Make sure you're signed into your Google Account.
 2. Go to the [firebase page here.](https://firebase.google.com/)
@@ -121,10 +132,6 @@ Now we have to set up Firebase.
 7. Now you only need the firebaseConfig so copy it and save it somewhere (like a notepad). 
 
    <img width="484" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/44cf2d16-e7b8-4abf-88a5-5b352cd07644"> 
-
-8. Create a `.env` file in the `/client` folder.
-
-   <img width="290" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/a21e5cea-c476-4611-876e-7d0f6f593857">
 
 9. Paste the following in the `.env` file.
     ```env
@@ -178,6 +185,13 @@ Next, install all packages and dependencies.
 npm install
 ```
 
+Backend Setup <br/>
+Open the file `backend/server.js` and on **line 1** make sure the port is the same as the one used in the `SERVER_URL` variable for the frontend.
+```js
+// you should see
+const PORT = 6000;
+```
+
 Now we have to setup firebase admin.
 1. Navigate to your app's settings.
 
@@ -200,25 +214,37 @@ From the root directory move into the `/cameraAppliance` folder.
 ```
 cd cameraAppliance
 ```
+Camera Setup <br/>
+1. Create a `.env` file in the `/cameraAppliance` folder.
 
-Now we need to set up and activate the virtual environemnt. <br/>
-**make sure you're using the correct version of python to set up the environment**
-<br/>To do so use...
-```
-python -m venv env
+   <img width="250" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/f224f427-4d4e-4a78-bc42-b4f35956b8d2">
+   
+2. Use the same `SERVER_URL` that you used in the client env file and paste it in this `.env` file. <br/>
+    _This SERVER_URL below, is an example._
+    ```env
+    SERVER_URL=http://92.199.137.15:6000
+    ```
 
-# windows
-env/Scripts/activate
+3. Now we need to set up the virtual environemnt. <br/>
+   **make sure you're using the correct version of python to set up the environment**<br/>
+   To do so use...
+    ```
+    python -m venv env
+    ```
+4. To activate the virtual environemnt use the appropriate command.
+    ```
+    # windows
+    env/Scripts/activate
 
-# macOS/WSL
-source env/bin/activate
-```
+    # macOS/WSL
+    source env/bin/activate
+    ```
 <br/>
 
-To install requirements use...
-```
-pip install -r requirements.txt
-```
+5. After activating the virtual environemnt you must install all the requirements with this command...
+    ```
+    pip install -r requirements.txt
+    ```
 <br/>
 
 ### 🎬 Running It All
