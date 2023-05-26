@@ -1,10 +1,18 @@
 # Rang
+<p align="center" style="margin-top: 220px">
+  <img src="https://github.com/MoschellaV/RingClone/assets/58868225/f1b21dd6-062d-4768-8341-7c9f108f68f7" alt="forthebadge">
+
+  <img src="https://github.com/MoschellaV/RingClone/assets/58868225/9b01ef5d-c944-47e9-b7d9-c7d087e31686" alt="forthebadge">
+
+  <img src="https://github.com/MoschellaV/RingClone/assets/58868225/09c8137e-3a84-41e2-ac7a-eef390d56bac" alt="forthebadge">
+</p>
 
 <p align="center">
   <img src="https://github.com/MoschellaV/RingClone/assets/58868225/e0496f35-8680-4592-b5c1-b1a6c32b82ae" alt="icon copy" width="200">
 </p>
-
 <p align="center">A ring clone (yes, the doorbell one).</p>
+
+
 
 ## 📖 Table of Contents
 - [About The Project & Inspo](#-about-the-project--inspo)
