@@ -13,7 +13,7 @@
   - [What I Learned](#-what-i-learned)
 - [Setup & Installation](#-setup--installation)
   - [Start Here](#-start-here) 
-  - [Frontend (client) & Firebase](#-frontend-client--firebase)
+  - [Frontend & Firebase](#-frontend--firebase)
   - [Back-end](#-back-end)
   - [Camera Appliance](#-camera-appliance)
 - [Usage](#usage)
@@ -73,7 +73,7 @@ To start make sure you have node.js. (I'm mentioning it up here because **you ne
 #### Prerequisites ~ Firebase
 2. **Google Account**: make sure you have a google account because we will be using it for `Firebase` later.
 
-#### Prerequisites ~ Frontend (client)
+#### Prerequisites ~ Frontend
 3. **Expo**: letting you know this project uses `expo` but you won't need to install anything since it leverages npx, you can read more about it [here](https://docs.expo.dev/get-started/installation/#recommended-tools).
 4. **Emulator**: make sure you have an emulator either `iOS` or `Android`. I would strongly recommend the [iOS Simulator](https://docs.expo.dev/workflow/ios-simulator/) or [Android Studio](https://docs.expo.dev/workflow/android-studio-emulator/).
 
@@ -89,7 +89,7 @@ git clone https://github.com/MoschellaV/RingClone.git
 ```
 <br/>
 
-### 🌐 Frontend (client) & Firebase
+### 🌐 Frontend & Firebase
 From the root directory move into the `/client` folder.
 ```
 cd client
@@ -118,14 +118,14 @@ Now we have to set up Firebase.
    <img width="290" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/a21e5cea-c476-4611-876e-7d0f6f593857">
 
 9. Paste the following in the `.env` file.
-  ```env
-  FIREBASE_API_KEY=your_key_here
-  FIREBASE_AUTH_DOMAIN=your_key_here
-  FIREBASE_PROJECT_ID=your_key_here
-  FIREBASE_STORAGE_BUCKET=your_key_here
-  FIREBASE_MESSAGE_SENDER_ID=your_key_here
-  FIREBASE_APP_ID=your_key_here
-  ```
+    ```env
+    FIREBASE_API_KEY=your_key_here
+    FIREBASE_AUTH_DOMAIN=your_key_here
+    FIREBASE_PROJECT_ID=your_key_here
+    FIREBASE_STORAGE_BUCKET=your_key_here
+    FIREBASE_MESSAGE_SENDER_ID=your_key_here
+    FIREBASE_APP_ID=your_key_here
+    ```
 10. For each variable replace `your_key_here` with the corresponding key from the firebaseConfig in step 7.
 11. Setup Firebase Auth.
     - Go to the firebase console and click `Authentication`. 
@@ -157,7 +157,7 @@ Now we have to set up Firebase.
 
 <br/>
 
-### ⚙️ Back-end 
+### ⚙ Back-end 
 From the root directory move into the `/backend` folder.
 ```
 cd backend
