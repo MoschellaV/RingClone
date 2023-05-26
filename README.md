@@ -101,30 +101,56 @@ Now we have to set up Firebase.
 2. Go to the [firebase page here.](https://firebase.google.com/)
 3. Click `Get started`.
 4. Click `Add project` and follow the steps, the name does not matter, and you can disable google analytics.
-5. Click the `</>` icon to add Firebase to your web app. <br/>
-<img width="500" alt="create_web_app" src="https://github.com/MoschellaV/RingClone/assets/58868225/bb7ae4b0-31f1-4e39-8b91-a8e2d5311c4d">
-<br/>
+5. Click the `</>` icon to add Firebase to your web app.
+
+   <img width="500" alt="create_web_app" src="https://github.com/MoschellaV/RingClone/assets/58868225/bb7ae4b0-31f1-4e39-8b91-a8e2d5311c4d">
 
 6. Now choose a name (anything), leave Firebase Hosting unchecked and register the app.
 7. Now you only need the firebaseConfig so copy it and save it somewhere (like a notepad). 
 
-<img width="484" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/44cf2d16-e7b8-4abf-88a5-5b352cd07644"> 
+   <img width="484" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/44cf2d16-e7b8-4abf-88a5-5b352cd07644"> 
 
 8. Create a `.env` file in the `/client` folder.
 
-<img width="290" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/a21e5cea-c476-4611-876e-7d0f6f593857">
+   <img width="290" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/a21e5cea-c476-4611-876e-7d0f6f593857">
 
 9. Paste the following in the `.env` file.
-```env
-FIREBASE_API_KEY=your_key_here
-FIREBASE_AUTH_DOMAIN=your_key_here
-FIREBASE_PROJECT_ID=your_key_here
-FIREBASE_STORAGE_BUCKET=your_key_here
-FIREBASE_MESSAGE_SENDER_ID=your_key_here
-FIREBASE_APP_ID=your_key_here
-FIREBASE_MEASURMENT_ID=your_key_here
-```
+  ```env
+  FIREBASE_API_KEY=your_key_here
+  FIREBASE_AUTH_DOMAIN=your_key_here
+  FIREBASE_PROJECT_ID=your_key_here
+  FIREBASE_STORAGE_BUCKET=your_key_here
+  FIREBASE_MESSAGE_SENDER_ID=your_key_here
+  FIREBASE_APP_ID=your_key_here
+  ```
 10. For each variable replace `your_key_here` with the corresponding key from the firebaseConfig in step 7.
+11. Setup Firebase Auth.
+    - Go to the firebase console and click `Authentication`. 
+    
+    <img width="500" alt="auth_button" src="https://github.com/MoschellaV/RingClone/assets/58868225/ea400ad0-9b42-4017-81ea-71365440aaba">
+    
+    - Click `Get started`.
+    
+    <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/383840a3-d0b5-448f-906d-3f53bb34bb75">
+    
+    - Select Email/Password as the sign-in method.
+    
+    <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/16e52449-e3db-45c5-8ab6-6aa60a97d1dc">
+    
+    - Enable Email/Password
+    
+    <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/b2dd4b92-abce-4893-9449-e9e9c7b15b93">
+    
+12. Setup Firestore.
+ - Go to the firebase console and click `Cloud Firestore`.
+ 
+ <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/38eddc27-f36e-4c1a-81a0-0bc7d5adc7ec">
+
+ - Click `Create Database`.
+ 
+ <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/028139bd-0ec6-49d5-a694-4b65104c37c4">
+ 
+ - When prompted with read/write rules check `Start in production mode` and then select **your region**.
 
 <br/>
 
