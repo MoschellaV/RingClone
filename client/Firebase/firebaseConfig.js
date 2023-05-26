@@ -7,7 +7,6 @@ import {
     FIREBASE_STORAGE_BUCKET,
     FIREBASE_MESSAGE_SENDER_ID,
     FIREBASE_APP_ID,
-    FIREBASE_MEASURMENT_ID,
 } from "@env";
 
 // Firebase configuration
@@ -18,7 +17,6 @@ const firebaseConfig = {
     storageBucket: FIREBASE_STORAGE_BUCKET,
     messagingSenderId: FIREBASE_MESSAGE_SENDER_ID,
     appId: FIREBASE_APP_ID,
-    measurementId: FIREBASE_MEASURMENT_ID,
 };
 
 // initialize firebase
