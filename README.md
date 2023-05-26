@@ -16,7 +16,8 @@
   - [Frontend & Firebase](#-frontend--firebase)
   - [Back-end](#-back-end)
   - [Camera Appliance](#-camera-appliance)
-- [Usage](#usage)
+  - [Running It All](#-running-it-all)
+- [Usage](#-usage)
 - [Contact](#-contact)
 <br/>
 
@@ -210,15 +211,70 @@ pip install -r requirements.txt
 ```
 <br/>
 
+### 🎬 Running It All
+Now that everything is set up, we can start up the project.
+
+<br/>
+
+But first we need to add our camera to the database, i mentioned this in the [What I Learned](#-what-i-learned) section.
+1. Navigate to `/cameraAppliance/device_CONFIG.py` and copy the ID that I left there.
+2. Now go into the firestore database in firebase.
+3. Click `Start collection` and name the collection `devices` <-- exactly like that, no caps.
+4. Paste the device_CONFIG ID into the document ID and then you can make up any field and value for that document (see below as exemplar).
+
+  <img width="450" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/766c6127-4d50-4dae-874e-e5fcbd15ef02">
+
+5. **IMPORTANT** If you want to add multiple camera's, duplicate the `cameraAppliance/` folder, and change the `device_id` in `device_CONFIG.py` to a new ID. Then follow the same steps as above, adding it into the database.
+
+<br/>
+
+#### Starting up Back-end
+First we will start the back-end.<br/>
+Open a new terminal  in the root directory and `cd backend`.<br/>
+Run the following to start the server...
+```
+npm start
+#you can also use nodemon if you happen to have it installed
+```
+<br/>
+
+#### Starting up Frontend
+Next the frontend with.<br/>
+Open a new terminal and `cd client`. <br/>
+Then run the following...
+```
+npx expo start
+
+#Next, view the options (in the terminal) presented by expo and press a or i depending on which emulator you're using.
+i
+#OR
+a
+```
+<br/>
+
+#### Starting up Camera
+And finally we can start the camera.<br/>
+Open a new terminal and `cd cameraAppliance`. <br/>
+**Make sure you're in your virtual environemnt**
+```
+# To Activate Virtual Env
+# windows
+env/Scripts/activate
+
+# macOS/WSL
+source env/bin/activate
+```
 To run the software for the camera use...
 ```
 python main.py OR python3 main.py 
 ```
-<br/>
 
-## Usage
+## 🧰 Usage
+To use the app, you must fist make an account, you can click `Sign Up` to do so.<br/>
+Once you have an account, you can go to your `Profile` and `Add Device`.<br/>
+Now log out and log back in. <br/>
+You should now see a video icon in the `Live Video` tab, click on it to view the live stream from your camera (you're camera needs to be running in case you closed it). You should also be able to see all the detection logs in the `Detection Logs` tab.
 
-...
 
 ## 📨 Contact
 Got questions? Feel free to reach out!
