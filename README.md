@@ -224,7 +224,8 @@ But first we need to add our camera to the database, I mentioned this in the [Wh
 
   <img width="450" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/766c6127-4d50-4dae-874e-e5fcbd15ef02">
 
-5. **IMPORTANT** If you want to add multiple camera's, duplicate the `cameraAppliance/` folder, and change the `device_id` in `device_CONFIG.py` to a new ID. Then follow the same steps as above, adding it into the database.
+5. Click Save.
+6. **IMPORTANT** If you want to add multiple camera's, duplicate the `cameraAppliance/` folder, and change the `device_id` in `device_CONFIG.py` to a new ID. Then follow the same steps as above, adding it into the database.
 
 <br/>
 
