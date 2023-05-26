@@ -216,11 +216,11 @@ Now that everything is set up, we can start up the project.
 
 <br/>
 
-But first we need to add our camera to the database, i mentioned this in the [What I Learned](#-what-i-learned) section.
+But first we need to add our camera to the database, I mentioned this in the [What I Learned](#-what-i-learned) section.
 1. Navigate to `/cameraAppliance/device_CONFIG.py` and copy the ID that I left there.
-2. Now go into the firestore database in firebase.
+2. Now go into the Firestore database in Firebase.
 3. Click `Start collection` and name the collection `devices` <-- exactly like that, no caps.
-4. Paste the device_CONFIG ID into the document ID and then you can make up any field and value for that document (see below as exemplar).
+4. Paste the device_Id into the document ID and then you can make up any field and value for that document (see below as exemplar).
 
   <img width="450" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/766c6127-4d50-4dae-874e-e5fcbd15ef02">
 
@@ -255,7 +255,7 @@ a
 #### Starting up Camera
 And finally we can start the camera.<br/>
 Open a new terminal and `cd cameraAppliance`. <br/>
-**Make sure you're in your virtual environemnt**
+_Make sure you're in your virtual environemnt_
 ```
 # To Activate Virtual Env
 # windows
