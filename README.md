@@ -35,7 +35,7 @@ Some features!
 - **Supports Multiple Cameras:** Users can add any amount of cameras whether it be a camera monitoring the front door, garage, or back door.
 - **Cloud Storage:** Recorded face detection logs, camera device data, and user data is securely stored in the cloud, providing convenient access and retrieval at any time.
 - **User Accounts**: Securely create a user profile where you can manage your devices.
-- **Mobile App Integration:** Mobile app for both IOS and Andriod users.
+- **Mobile App Integration:** Mobile app for both iOS and Andriod users.
 <br/>
 
 ### 💻 Tech Used
@@ -68,7 +68,7 @@ You're gonna need some stuff first...
 To start make sure you have node.js. (I'm mentioning it up here because **you need it for both the front and back end**.)
 1. **Install Node.js**: make sure you are using `node.js` version `>= v16.16.0` and `npm` version `>=8.11.0` .If you don't have it node, install it [here](https://nodejs.org/en).
 
-#### Prerequisites ~ Back-end & Firebase
+#### Prerequisites ~ Firebase
 2. **Google Account**: make sure you have a google account because we will be using it for `Firebase` later.
 
 #### Prerequisites ~ Frontend (client)
@@ -86,17 +86,83 @@ git clone https://github.com/MoschellaV/RingClone.git
 ```
 <br/>
 
-### Back-end & Firebase
+### Frontend (client) & Firebase
+From the root directory move into the `/client` folder.
+```
+cd client
+```
+Next, install all packages and dependencies.
+```
+npm install
+```
 
-...
+Now we have to set up Firebase.
+1. Make sure you're signed into your Google Account.
+2. Go to the [firebase page here.](https://firebase.google.com/)
+3. Click `Get started`.
+4. Click `Add project` and follow the steps, the name does not matter, and you can disable google analytics.
+5. Click the `</>` icon to add Firebase to your web app. <br/>
+<img width="500" alt="create_web_app" src="https://github.com/MoschellaV/RingClone/assets/58868225/bb7ae4b0-31f1-4e39-8b91-a8e2d5311c4d">
+<br/>
 
-### Frontend (client)
+6. Now choose a name (anything), leave Firebase Hosting unchecked and register the app.
+7. Now you only need the firebaseConfig so copy it and save it somewhere (like a notepad). 
+
+<img width="484" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/44cf2d16-e7b8-4abf-88a5-5b352cd07644"> 
+
+8. Create a `.env` file in the `/client` folder.
+
+<img width="290" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/a21e5cea-c476-4611-876e-7d0f6f593857">
+
+9. Paste the following in the `.env` file.
+```env
+FIREBASE_API_KEY=your_key_here
+FIREBASE_AUTH_DOMAIN=your_key_here
+FIREBASE_PROJECT_ID=your_key_here
+FIREBASE_STORAGE_BUCKET=your_key_here
+FIREBASE_MESSAGE_SENDER_ID=your_key_here
+FIREBASE_APP_ID=your_key_here
+FIREBASE_MEASURMENT_ID=your_key_here
+```
+10. For each variable replace `your_key_here` with the corresponding key from the firebaseConfig in step 7.
+
+<br/>
+
+### Back-end 
 
 ...
 
 ### Camera Appliance
+Move into the `/cameraAppliance` directory with:
+```
+cd cameraAppliance
+```
 
-...
+Now we need to set up and activate the virtual environemnt. <br/>
+**make sure you're using the correct version of python to set up the environment**
+<br/>To do so use...
+```
+python -m venv env
+
+# windows
+env/Scripts/activate
+
+# macOS/WSL
+source env/bin/activate
+```
+<br/>
+
+To install requirements use...
+```
+pip install -r requirements.txt
+```
+<br/>
+
+To run the software for the camera use...
+```
+python main.py OR python3 main.py 
+```
+<br/>
 
 ## Usage
 
@@ -109,35 +175,3 @@ Got questions? Feel free to reach out!
 - [LinkedIn](https://www.linkedin.com/in/moschellav/)
 
 You can also open an issue on this GitHub repo if you find any problems.
-
-## just some notes -- will clean up this readme
-
-### for cameraAppliance
-You must have **python 3.7+** (I used python 3.9 while making this, but it should work for python 3.7+)
-
-To set up virtual environemnt (macOS) use...
-<br/>
-**make sure you're using the correct version of python to set up the environment**
-<br/>
-- python -m venv env
-- source env/bin/activate
-
-<br/>
-
-To install requirements use...
-- pip install -r requirements.txt
-
-<br/>
-
-To run the software for the camera use... <br/>
-- python3 main.py
-
-### for server
-
-you just need to run
-npm install, to install all dependencies
-
-### for client
-
-you just need to run
-npm install, to install all dependencies
