@@ -13,9 +13,9 @@
   - [What I Learned](#-what-i-learned)
 - [Setup & Installation](#-setup--installation)
   - [Start Here](#-start-here) 
-   - [Frontend (client) & Firebase](#frontend-client--firebase)
-  - [Back-end](#back-end)
-  - [Camera Appliance](#camera-appliance)
+  - [Frontend (client) & Firebase](#-frontend-client--firebase)
+  - [Back-end](#-back-end)
+  - [Camera Appliance](#-camera-appliance)
 - [Usage](#usage)
 - [Contact](#-contact)
 <br/>
@@ -61,7 +61,9 @@ _Side Note_ ~ I envisioned that if this were a real product you could have a scr
 ### 🎯 Start Here
 Want to set it up? Just follow this portion of the ReadMe _in order_.
 
-### ⚙️ Prerequisites
+<br/>
+
+### 📋 Prerequisites
 You're gonna need some stuff first...
 <br/>
 <br/>
@@ -77,6 +79,7 @@ To start make sure you have node.js. (I'm mentioning it up here because **you ne
 
 #### Prerequisites ~ Camera Appliace 
 5. **Python**: ensure you have `python 3.9+`
+<br/>
 
 ### 🔄 Cloning
 Next, clone the repo. <br/>
@@ -86,7 +89,7 @@ git clone https://github.com/MoschellaV/RingClone.git
 ```
 <br/>
 
-### Frontend (client) & Firebase
+### 🌐 Frontend (client) & Firebase
 From the root directory move into the `/client` folder.
 ```
 cd client
@@ -154,11 +157,34 @@ Now we have to set up Firebase.
 
 <br/>
 
-### Back-end 
+### ⚙️ Back-end 
+From the root directory move into the `/backend` folder.
+```
+cd backend
+```
+Next, install all packages and dependencies.
+```
+npm install
+```
 
-...
+Now we have to setup firebase admin.
+1. Navigate to your app's settings.
 
-### Camera Appliance
+   <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/2b7e2187-1df6-4d5e-9d16-6b7c963ea059">
+   <img width="500" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/790e24d8-5b02-4fdc-b982-6db501d16d6a">
+
+2. Using the tabs navigate to `Service accounts`, then click `Generate new private key`.
+
+   <img width="700" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/12714383-0637-4d3f-bb1d-d7f2739c7bc7">
+
+3. Download the generated key, open the `.json` file and copy all the contents.
+4. Create a file called `serviceAccountKey.json` in the `/backend/Firebase` directory and paste the contents of the generated key in that file.
+ 
+   <img width="250" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/0b65b698-8f69-4561-bdc9-5595e67cb991">
+
+<br/>
+
+### 📸 Camera Appliance
 Move into the `/cameraAppliance` directory with:
 ```
 cd cameraAppliance
