@@ -1,9 +1,10 @@
 import axios from "axios";
+import { SERVER_URL } from "@env";
 
 export const createNewUser = (userInfo) => {
     return axios({
         method: "POST",
-        url: "http://localhost:6000/api/user/create-user-account",
+        url: `${SERVER_URL}/api/user/create-user-account`,
         data: userInfo,
         headers: {
             Accept: "application/json",
@@ -15,7 +16,7 @@ export const createNewUser = (userInfo) => {
 export const deleteUserAccount = (uid) => {
     return axios({
         method: "POST",
-        url: "http://localhost:6000/api/user/delete-user-account",
+        url: `${SERVER_URL}/api/user/delete-user-account`,
         data: uid,
         headers: {
             Accept: "application/json",
@@ -27,7 +28,7 @@ export const deleteUserAccount = (uid) => {
 export const addNewDevice = (deviceId) => {
     return axios({
         method: "POST",
-        url: "http://localhost:6000/api/user/add-device",
+        url: `${SERVER_URL}/api/user/add-device`,
         data: deviceId,
         headers: {
             Accept: "application/json",
@@ -39,7 +40,7 @@ export const addNewDevice = (deviceId) => {
 export const getUserDocument = (userId) => {
     return axios({
         method: "POST",
-        url: "http://localhost:6000/api/user/get-user-document",
+        url: `${SERVER_URL}/api/user/get-user-document`,
         data: userId,
         headers: {
             Accept: "application/json",
@@ -51,7 +52,7 @@ export const getUserDocument = (userId) => {
 export const getUserDevices = (userId) => {
     return axios({
         method: "POST",
-        url: "http://localhost:6000/api/user/get-user-devices",
+        url: `${SERVER_URL}/api/user/get-user-devices`,
         data: userId,
         headers: {
             Accept: "application/json",
@@ -63,7 +64,7 @@ export const getUserDevices = (userId) => {
 export const getAllUserLogs = (userId) => {
     return axios({
         method: "POST",
-        url: "http://localhost:6000/api/user/get-all-user-logs",
+        url: `${SERVER_URL}/api/user/get-all-user-logs`,
         data: userId,
         headers: {
             Accept: "application/json",

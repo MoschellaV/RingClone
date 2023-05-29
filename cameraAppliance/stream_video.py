@@ -1,16 +1,22 @@
 import cv2 as cv
 import base64
 import socketio
+import os
+from dotenv import load_dotenv
 
 # importing unique device id
 # a unique id would be hard coded into every device
 # the device's id would also be stored in firestore db for authentication
 from device_CONFIG import device_id
 
+# access environment variables
+load_dotenv()
+server_url = os.getenv("SERVER_URL")
+
 sio = socketio.Client()
 
 # construct the connection URL with the device ID as a query param
-connection_url = 'http://10.0.0.40:6000/api/stream-video?deviceId=' + device_id
+connection_url = f'{server_url}/api/stream-video?deviceId={device_id}'
 
 # connect to server
 sio.connect(connection_url, namespaces=['/api/stream-video'])

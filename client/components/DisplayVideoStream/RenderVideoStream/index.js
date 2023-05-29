@@ -4,6 +4,7 @@ import { Dimensions, Image } from "react-native";
 import { Box, Button, Text, useToast } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { SERVER_URL } from "@env";
 
 const RenderVideoStream = ({ deviceId, deviceName }) => {
     const toast = useToast();
@@ -67,7 +68,7 @@ const RenderVideoStream = ({ deviceId, deviceName }) => {
         setShowPlayIcon(false);
 
         // establish connection to server
-        socketRef.current = io("http://localhost:6000/api/stream-video", {
+        socketRef.current = io(`${SERVER_URL}/api/stream-video`, {
             query: { deviceId: deviceId },
         });
 
