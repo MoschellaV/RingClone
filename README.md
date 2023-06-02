@@ -16,6 +16,7 @@
 
 ## 📖 Table of Contents
 - [About The Project & Inspo](#-about-the-project--inspo)
+  - [Demo Video](#-demo-video)
   - [Features](#-features)
   - [Tech Used](#-tech-used)
   - [What I Learned](#-what-i-learned)
@@ -33,6 +34,17 @@
 Imagine ring, now hopefully your memory is blurry because you're looking at Rang. 
 
 Anyway, this project aims to replicate some of ring's features and system design. I could've done something _simpler_ :woozy_face: but honestly doing a twitter, spotify, or a youtube clone is boringggg, like there's tutorials on that. But making a ring clone...  haven't seen a tutorial on it _yet_.
+
+<br/>
+
+### 🎥 Demo Video
+There's **audio** btw. <br/>
+
+<p align="center">
+  
+  https://github.com/MoschellaV/RingClone/assets/58868225/8d7a70da-47a6-4963-8d5f-e07f6b0a60e7
+
+</p>
 
 <br/>
 
