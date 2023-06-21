@@ -42,7 +42,7 @@ There's **audio** btw. <br/>
 
 <p align="center">
   
-  https://github.com/MoschellaV/RingClone/assets/58868225/8d7a70da-47a6-4963-8d5f-e07f6b0a60e7
+  https://github.com/MoschellaV/RingClone/assets/58868225/4f09c10c-e11b-4830-88ef-e8c47b891897
 
 </p>
 
