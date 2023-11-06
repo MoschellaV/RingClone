@@ -49,7 +49,7 @@ There's **audio** btw. <br/>
 
 <br/>
 
-### ⚙️ Hardware
+### 🔨 Hardware
 Check out the hardwae behind the project!
 
 <img width="300" height="300" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/9737424a-de3f-4797-b005-3e5e1d2ed55b">
