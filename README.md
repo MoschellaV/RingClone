@@ -17,6 +17,7 @@
 ## 📖 Table of Contents
 - [About The Project & Inspo](#-about-the-project--inspo)
   - [Demo Video](#-demo-video)
+  - [Hardware](#-hardware)
   - [Features](#-features)
   - [Tech Used](#-tech-used)
   - [What I Learned](#-what-i-learned)
@@ -45,6 +46,15 @@ There's **audio** btw. <br/>
   https://github.com/MoschellaV/RingClone/assets/58868225/4f09c10c-e11b-4830-88ef-e8c47b891897
 
 </p>
+
+<br/>
+
+### ⚙️ Hardware
+Check out the hardwae behind the project!
+
+<img width="300" height="300" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/9737424a-de3f-4797-b005-3e5e1d2ed55b">
+<img width="300" height="300" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/933ff6a1-dd39-4c5a-907b-6d4cb082b5ed">
+<img width="200" height="300" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/1b05ebad-8516-4be5-9c73-0defc5116c2a">
 
 <br/>
 
