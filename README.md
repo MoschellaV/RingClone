@@ -50,7 +50,7 @@ There's **audio** btw. <br/>
 <br/>
 
 ### 🔨 Hardware
-Check out the hardwae behind the project!
+Check out what the hardware behind the camera appliance looks like! I used a 5 megapixel camera attached via a ribbon cabel to a Raspberry Pi Model B.
 
 <img width="300" height="300" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/9737424a-de3f-4797-b005-3e5e1d2ed55b">
 <img width="300" height="300" alt="image" src="https://github.com/MoschellaV/RingClone/assets/58868225/933ff6a1-dd39-4c5a-907b-6d4cb082b5ed">
